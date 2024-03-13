@@ -1,7 +1,13 @@
-"use client"
+"use client";
 
-import HomePage from "@/components/home";
+import MainSlider from "@/components/base/sliders/main-slider";
+import ProductSlider from "@/components/base/sliders/products/product-slider";
 
 export default function Home() {
-  return <HomePage />;
+  return (
+    <main className="flex flex-col gap-3 pt-36">
+      <MainSlider />
+      <ProductSlider />
+    </main>
+  );
 }
