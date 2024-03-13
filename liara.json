@@ -1,4 +1,7 @@
 {
   "app": "wegamers-client",
-  "platform": "next"
+  "platform": "next",
+  "next": {
+    "modifyConfig": false
+  }
 }
