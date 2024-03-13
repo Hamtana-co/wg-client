@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Icon } from "@iconify/react";
 
 export default function ProductSlider() {
-  const carouselRef = useRef();
+  const carouselRef:any = useRef();
   const carouselSwitcher = (data: any) => {
     if (carouselRef.current) {
       const width = carouselRef.current.offsetWidth;
