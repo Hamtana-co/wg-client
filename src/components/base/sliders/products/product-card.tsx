@@ -25,7 +25,7 @@ const SlideBox = () => {
           </ul>
         </div>
         <div className="flex justify-between items-center py-2 px-1">
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <span className="text-[#D1BBFF] text-2xl">100</span>
             <span className="text-white">هزار تومان</span>
           </div>

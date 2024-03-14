@@ -14,7 +14,7 @@ export default async function AuthLayout({ children }: PropsWithChildren) {
 
   return (
     <html lang="en" className="dark">
-      <body className="w-screen h-screen overflow-hidden">{children}</body>
+      <body className="dark:bg-[#12141C] overflow-hidden">{children}</body>
     </html>
   );
 }
