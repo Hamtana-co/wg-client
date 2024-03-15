@@ -1,4 +1,4 @@
-import { UserModel } from "types/models/user"
+import { UserModel } from "@/types/models/user"
 
 export interface IRegisterResponse {
   user: UserModel
