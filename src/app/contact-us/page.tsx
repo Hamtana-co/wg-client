@@ -2,11 +2,11 @@
 
 import MainHeader from "@/components/base/headers/main-header";
 
-export default function AboutUs() {
+export default function ContactUs() {
   return (
     <main className="flex flex-col gap-3 pt-36">
       <MainHeader />
-      <div>درباره ما</div>
+      <div>تماس با ما</div>
     </main>
   );
 }
