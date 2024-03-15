@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { Providers } from "../providers";
 
 const getUser = async () => {
   const user = cookies().get("user");
@@ -14,7 +15,9 @@ export default async function AuthLayout({ children }: PropsWithChildren) {
 
   return (
     <html lang="en" className="dark">
-      <body className="dark:bg-[#12141C] overflow-hidden">{children}</body>
+      <body className="dark:bg-[#12141C] overflow-hidden">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

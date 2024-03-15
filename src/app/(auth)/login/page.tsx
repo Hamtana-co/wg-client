@@ -1,10 +1,51 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent, useCallback, useState } from "react";
+import { POST_LOGIN } from "./apis";
+import { RoleEnum } from "@/types/enums/role";
+import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/react";
 
 export default function Login() {
+  const router = useRouter();
+  const [error, setError] = useState<string | undefined>();
+
+  const loginMutation = useMutation({
+    mutationKey: ["POST_LOGIN"],
+    mutationFn: POST_LOGIN,
+    onSuccess: ({ data }) => {
+      console.log("dsds", data);
+      if ([RoleEnum.FOUNDER].includes(data.user.role)) {
+        router.replace("/");
+      } else {
+        setError("Invalid Credentials");
+      }
+    },
+    onError: ({ response }: AxiosError) => {
+      let message = "Server Error";
+      if (response?.status === 401) message = "Invalid ss";
+      setError(message);
+    },
+  });
+
+  const onSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      const data = new FormData(e.currentTarget);
+      loginMutation.mutate(data);
+    },
+    [loginMutation]
+  );
+
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
+
   return (
     <main className="w-screen h-screen flex flex-col justify-center items-center rtl">
       <div className="w-full flex flex-col-reverse justify-center items-center h-full gap-4 px-4 lg:gap-12 lg:px-24">
@@ -29,16 +70,21 @@ export default function Login() {
             <Icon icon="devicon:google" className="w-6 h-6" />
             <span>ورود با حساب گوگل</span>
           </button>
-          
-          <form action="" className="flex flex-col gap-6 w-full font-[yekan]">
+
+          <form
+            onSubmit={onSubmit}
+            className="flex flex-col gap-6 w-full font-[yekan]"
+          >
             <input
-              type="text"
+              name="email"
+              type="email"
               placeholder="ایمیل یا نام کاربری خود را وارد کنید"
               className="bg-[#70737b47] border-b-4 border-[#10101147] focus:border-[#6C43E2] w-full focus:outline-none p-4 flex justify-center items-center rounded-2xl text-white"
             />
             <div className="flex flex-col gap-2">
               <input
-                type="text"
+                name="password"
+                type="password"
                 placeholder="رمز عبور خود را وارد کنید"
                 className="bg-[#70737b47] border-b-4  border-[#10101147] focus:border-[#6C43E2] w-full focus:outline-none p-4 flex justify-center items-center rounded-2xl text-white"
               />
@@ -52,10 +98,14 @@ export default function Login() {
               </span>
             </div>
             <div className="flex flex-col justify-between gap-3">
-              <button className="bg-[#8762D8] border-b-4 border-[#6C43E2] w-full py-4 flex justify-center items-center rounded-2xl text-white gap-2">
+              <Button
+                type="submit"
+                isLoading={loginMutation.isPending}
+                className="bg-[#8762D8] border-b-4 border-[#6C43E2] w-full py-4 flex justify-center items-center rounded-2xl text-white gap-2"
+              >
                 <Icon icon="solar:user-bold-duotone" className="w-6 h-6" />
                 <span>ورود به حساب</span>
-              </button>
+              </Button>
               <Link
                 href="/register"
                 className="bg-[#70737b47] border-b-4 border-[#10101147] w-full py-4 px-2 flex justify-center items-center rounded-2xl text-white gap-2"

@@ -11,8 +11,10 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
+import { CookiesProvider, useCookies } from "react-cookie";
 
 export default function MainHeader() {
+  const [cookies, setCookie] = useCookies(["user"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [categoryHover, setcategoryHover] = useState(0);
   return (
@@ -62,41 +64,46 @@ export default function MainHeader() {
                 </span>
               </Link>
 
-              {!isLoggedIn ? (
-                <div className="flex items-center gap-2">
+              <CookiesProvider>
+                {cookies.user ? (
                   <Link
-                    href="/login"
-                    className="bg-[#70737b47] border-b-4 border-[#10101147] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
-                  >
-                    <span>ورود</span>
-                    <Icon icon="solar:user-bold-duotone" className="w-7 h-7" />
-                  </Link>
-                  <Link
-                    href="/register"
+                    href=""
                     className="bg-[#8762D8] border-b-4 border-[#6C43E2] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
                   >
-                    <span>ثبت نام</span>
-                    <Icon
-                      icon="solar:user-plus-bold-duotone"
-                      className="w-7 h-7"
+                    <span>حساب کاربری</span>
+                    <Image
+                      className="w-7 h-7 rounded-full"
+                      src="/getfile.png"
+                      width={100}
+                      height={100}
+                      alt="test"
                     />
                   </Link>
-                </div>
-              ) : (
-                <Link
-                  href=""
-                  className="bg-[#8762D8] border-b-4 border-[#6C43E2] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
-                >
-                  <span>حساب کاربری</span>
-                  <Image
-                    className="w-7 h-7 rounded-full"
-                    src="/getfile.png"
-                    width={100}
-                    height={100}
-                    alt="test"
-                  />
-                </Link>
-              )}
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href="/login"
+                      className="bg-[#70737b47] border-b-4 border-[#10101147] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
+                    >
+                      <span>ورود</span>
+                      <Icon
+                        icon="solar:user-bold-duotone"
+                        className="w-7 h-7"
+                      />
+                    </Link>
+                    <Link
+                      href="/register"
+                      className="bg-[#8762D8] border-b-4 border-[#6C43E2] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
+                    >
+                      <span>ثبت نام</span>
+                      <Icon
+                        icon="solar:user-plus-bold-duotone"
+                        className="w-7 h-7"
+                      />
+                    </Link>
+                  </div>
+                )}
+              </CookiesProvider>
             </div>
           </div>
           <div className="flex items-center pt-3 px-2 gap-5 font-[yekan]">
