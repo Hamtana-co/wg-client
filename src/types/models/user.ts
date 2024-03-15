@@ -1,5 +1,5 @@
-import { IBaseModel } from "types/interfaces/base.interface"
 import { RoleEnum } from "../enums/role"
+import { IBaseModel } from "../interfaces/base.interface"
 
 export interface UserModel extends IBaseModel {
   username: string

@@ -1,7 +1,8 @@
 "use client"
 
+import { isJSON } from "@/utils/json"
 import { useCallback } from "react"
-import { isJSON } from "utils/json"
+
 
 type TStorageType = "session" | "local"
 

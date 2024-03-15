@@ -1,7 +1,6 @@
-import { IBaseModel } from "types/interfaces/base.interface"
-import { RoleEnum } from "../enums/role"
 import { TeamMemberModel } from "./team-member";
 import { TeamFollowerModel } from "./team-follower";
+import { IBaseModel } from "../interfaces/base.interface";
 
 export interface TeamModel extends IBaseModel {
     team_name: string;
