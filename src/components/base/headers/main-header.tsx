@@ -4,17 +4,26 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useState } from "react";
+import {
+  Button,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
 
 export default function MainHeader() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [categoryHover, setcategoryHover] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [categoryHover, setcategoryHover] = useState(0);
   return (
     <>
-      <header className="flex w-full fixed top-0 left-0 rtl px-12 bg-[#12141C]">
+      <header className="hidden lg:flex w-full fixed top-0 left-0 rtl px-24  bg-[#12141C] z-50">
         <div className="flex flex-col border-b-2 border-[#888C8C] w-full py-3">
           <div className="flex justify-between items-center w-full px-2">
             <div className="flex items-center gap-5">
-              <h1 className="text-[#D1BBFF] text-3xl">We Gamers</h1>
+              <h1 className="text-[#D1BBFF] text-3xl">
+                <Link href="/">We Gamers</Link>
+              </h1>
               <div className="relative">
                 <input
                   type="text"
@@ -90,7 +99,7 @@ export default function MainHeader() {
               )}
             </div>
           </div>
-          <div className="flex items-center pt-3 px-2 gap-5">
+          <div className="flex items-center pt-3 px-2 gap-5 font-[yekan]">
             <div className="flex flex-col relative">
               <Link
                 href=""
@@ -115,7 +124,7 @@ export default function MainHeader() {
               </div>
             </div>
             <Link
-              href=""
+              href="/"
               className=" flex justify-center items-center rounded-2xl text-[#D1BBFF] hover:text-[#D1BBFF] gap-2"
             >
               <Icon
@@ -125,28 +134,28 @@ export default function MainHeader() {
               صفحه اصلی
             </Link>
             <Link
-              href=""
+              href="/shop"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:shop-bold-duotone" className="w-6 h-6" />
               فروشگاه
             </Link>
             <Link
-              href=""
+              href="/tournament"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:cup-bold-duotone" className="w-6 h-6" />
               تورنومنت
             </Link>
             <Link
-              href=""
+              href="/blog"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:bookmark-bold-duotone" className="w-6 h-6" />
               وبلاگ
             </Link>
             <Link
-              href=""
+              href="/contact-us"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon
@@ -156,8 +165,8 @@ export default function MainHeader() {
               تماس با ما
             </Link>
             <Link
-              href=""
-              className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
+              href="/about-us"
+              className=" flex justify-center items-center rounded-2xl text-[#b5bbbb] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:info-square-bold-duotone" className="w-6 h-6" />
               درباره ما
@@ -165,6 +174,51 @@ export default function MainHeader() {
           </div>
         </div>
       </header>
+      <nav className="lg:hidden flex justify-between bg-[#12141C] items-center fixed border-[#888C8C] top-0 left-0 rtl w-full p-5 border-b-2 z-50">
+        <div>
+          <Link href="/about-us">
+            <Icon icon="solar:info-square-bold-duotone" className="w-8 h-8" />
+          </Link>
+        </div>
+        <div>
+          <h1 className="text-[#D1BBFF] text-3xl">
+            <Link href="/">We Gamers</Link>
+          </h1>
+        </div>
+      </nav>
+      <div className="text-sm font-[yekan] lg:hidden fixed w-full bottom-0 left-0 border-[#888C8C] border-t-2 p-3 rtl bg-[#12141C] z-50">
+        <div className="flex justify-around text-[#888C8C]">
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <Icon
+              icon="solar:hamburger-menu-line-duotone"
+              className="w-8 h-8"
+            />
+            <span>دسته بندی ها</span>
+          </div>
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <Icon
+              icon="solar:rounded-magnifer-bold-duotone"
+              className="w-8 h-8"
+            />
+            <span>جستجو</span>
+          </div>
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <Icon
+              icon="solar:home-smile-angle-bold-duotone"
+              className="w-8 h-8"
+            />
+            <span>صفحه اصلی</span>
+          </div>
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <Icon icon="solar:cart-large-2-bold-duotone" className="w-8 h-8" />
+            <span>سبد خرید</span>
+          </div>
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <Icon icon="solar:user-bold-duotone" className="w-8 h-8" />
+            <span className=""> پروفایل</span>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

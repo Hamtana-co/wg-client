@@ -32,10 +32,74 @@
 }
 
 @font-face {
-  font-family: "peyda";
+  font-family: "montserrat";
   font-style: normal;
   font-weight: bold;
   src: url("../../public/fonts/peyda/Peyda-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "yekan";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../public/fonts/yekan/yekan-regular.woff") format("woff");
+}
+
+/* Font  */
+
+/* @font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../public/fonts/montserrat/montserrat-Bold.woff") format("woff");
+} */
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../public/fonts/montserrat/700.ttf") format("ttf");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../public/fonts/montserrat/800.ttf") format("ttf");
+}
+@font-face {
+  font-family: "montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../public/fonts/montserrat/900.ttf") format("ttf");
 }
 
 html,
@@ -54,6 +118,10 @@ body {
   direction: rtl;
 }
 
+.pp {
+  text-align: center !important;
+}
+
 .sliderContainer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -64,6 +132,50 @@ body {
 }
 .sliderItem {
   scroll-snap-align: start;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  border-bottom: 5px solid #cdc9d4 !important;
+  border-radius: 35px;
+  width: 45px !important;
+  height: 45px !important;
+  color: #424750;
+}
+
+.swiper-button-next {
+  left: 0 !important;
+}
+
+.swiper-button-prev {
+  right: 0 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #424750;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  display: none;
+}
+
+@media screen and (min-width: 300px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+  }
 }
 
 @tailwind base;

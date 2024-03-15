@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
-const SlideBox = () => {
+export default function ShopProductCard() {
   return (
-    <div className="sliderItem p-2  hover:pt-0 transition-all duration-300 rtl">
+    <div className="sliderItem py-2  hover:pt-0 transition-all duration-300 ">
       <div className="relative bg-[#70737b1c] h-fit w-72 rounded-[25px] border-2 border-[#ffffff4a] p-[5px]">
         <div>
           <Image
@@ -42,6 +42,4 @@ const SlideBox = () => {
       </div>
     </div>
   );
-};
-
-export default SlideBox;
+}

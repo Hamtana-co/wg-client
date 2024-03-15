@@ -1,6 +1,6 @@
 "use client";
 
-import MainHeader from "@/components/base/headers/main-haeder";
+import MainHeader from "@/components/base/headers/main-header";
 import MainSlider from "@/components/base/sliders/main-slider";
 import ProductSlider from "@/components/base/sliders/products/product-slider";
 
