@@ -1,4 +1,4 @@
-import { RoleEnum } from "types/enums/role";
+import { RoleEnum } from "@/types/enums/role";
 
 type UserPermissions = {
   [key in RoleEnum]?: string[];
