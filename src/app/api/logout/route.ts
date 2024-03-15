@@ -1,4 +1,5 @@
-import { api } from "common"
+
+import { api } from "@/common"
 import { cookies } from "next/headers"
 
 export async function POST() {
