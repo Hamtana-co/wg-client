@@ -92,7 +92,7 @@ export default function Register() {
               <Button
                 type="submit"
                 isLoading={registerMutation.isPending}
-                className="bg-[#8762D8] border-b-4 border-[#6C43E2] w-full py-4 flex justify-center items-center rounded-2xl text-white gap-2"
+                className="bg-[#8762D8] border-b-4 border-[#6C43E2] w-full py-7 flex justify-center items-center rounded-2xl text-white gap-2"
               >
                 <Icon icon="solar:user-bold-duotone" className="w-6 h-6" />
                 <span>عضویت در سایت</span>
