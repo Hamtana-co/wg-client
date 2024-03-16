@@ -161,20 +161,38 @@ export default function MainHeader() {
             />
             <span>جستجو</span>
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center">
-            <Icon
-              icon="solar:home-smile-angle-bold-duotone"
-              className="w-8 h-8"
-            />
-            <span>صفحه اصلی</span>
+          <div>
+            <Link
+              href="/"
+              className="flex flex-col gap-2 items-center justify-center"
+            >
+              <Icon
+                icon="solar:home-smile-angle-bold-duotone"
+                className="w-8 h-8"
+              />
+              <span>صفحه اصلی</span>
+            </Link>
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center">
-            <Icon icon="solar:cart-large-2-bold-duotone" className="w-8 h-8" />
-            <span>سبد خرید</span>
+          <div>
+            <Link
+              href="/cart"
+              className="flex flex-col gap-2 items-center justify-center"
+            >
+              <Icon
+                icon="solar:cart-large-2-bold-duotone"
+                className="w-8 h-8"
+              />
+              <span>سبد خرید</span>
+            </Link>
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center">
-            <Icon icon="solar:user-bold-duotone" className="w-8 h-8" />
-            <span className=""> پروفایل</span>
+          <div>
+            <Link
+              href="/login"
+              className="flex flex-col gap-2 items-center justify-center"
+            >
+              <Icon icon="solar:user-bold-duotone" className="w-8 h-8" />
+              <span className=""> پروفایل</span>
+            </Link>
           </div>
         </div>
       </div>

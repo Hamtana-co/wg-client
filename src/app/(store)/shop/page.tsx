@@ -6,7 +6,6 @@ import ShopPage from "@/components/shop";
 export default function Shop() {
   return (
     <main>
-      <MainHeader />
       <ShopPage />
     </main>
   );

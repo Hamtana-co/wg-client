@@ -49,7 +49,7 @@ export default function Account() {
                   <span className="flex items-center gap-2">
                     <span>سلام ،</span>
                     {genreQuery.isLoading ? (
-                      <Skeleton />
+                      <Skeleton className="h-3 w-3/5 rounded-lg" />
                     ) : (
                       <span>{genreQuery.data?.data.username}</span>
                     )}
@@ -85,7 +85,6 @@ export default function Account() {
                 <li>
                   <button
                     className="flex gap-2 items-center hover:text-[#D1BBFF]"
-            
                     onClick={() => logoutMutation.mutate()}
                   >
                     <Icon
