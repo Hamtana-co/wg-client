@@ -16,7 +16,7 @@ import { Metadata } from "next";
 export default function Account() {
   const [cookies] = useCookies(["user"]);
 
-  const genreQuery = useQuery({
+  const userQuery = useQuery({
     queryKey: ["GET_USER"],
     queryFn: () => userService.get(cookies.user.id),
   });
@@ -48,17 +48,17 @@ export default function Account() {
                 <div className="mt-10">
                   <span className="flex items-center gap-2">
                     <span>سلام ،</span>
-                    {genreQuery.isLoading ? (
+                    {userQuery.isLoading ? (
                       <Skeleton className="h-3 w-3/5 rounded-lg" />
                     ) : (
-                      <span>{genreQuery.data?.data.username}</span>
+                      <span>{userQuery.data?.data.username}</span>
                     )}
                   </span>
                 </div>
                 <div className="flex items-center justify-between w-full">
                   <span>کیف پول :</span>
                   <span className="flex">
-                    <span>2000</span>
+                    <span>{userQuery.data?.data.wallet.balance}</span>
                     <span>تومان</span>
                   </span>
                 </div>

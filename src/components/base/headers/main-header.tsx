@@ -2,28 +2,21 @@
 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 import { useState } from "react";
-import {
-  Button,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
-import { CookiesProvider, useCookies } from "react-cookie";
 import MiniAccount from "../account/mini-account";
 import MiniCart from "../cart/mini-cart";
+import { cookies } from "next/headers";
 
-export default function MainHeader() {
+
+export default async function MainHeader() {
+
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [categoryHover, setcategoryHover] = useState(0);
 
-  const [cookies] = useCookies(["user"]);
-
   return (
-    <>
-      <header className="hidden lg:flex w-full fixed top-0 left-0 rtl px-24  bg-[#12141C] z-30">
+    <div>
+      <header className="hidden lg:flex w-full fixed top-0 left-0 px-24 rtl bg-[#12141C] z-30">
         <div className="flex flex-col border-b-2 border-[#888C8C] w-full py-3">
           <div className="flex justify-between items-center w-full px-2">
             <div className="flex items-center gap-5">
@@ -133,69 +126,6 @@ export default function MainHeader() {
           </div>
         </div>
       </header>
-      <nav className="lg:hidden flex justify-between bg-[#12141C] items-center fixed border-[#888C8C] top-0 left-0 rtl w-full p-5 border-b-2 z-50">
-        <div>
-          <Link href="/about-us">
-            <Icon icon="solar:info-square-bold-duotone" className="w-8 h-8" />
-          </Link>
-        </div>
-        <div>
-          <h1 className="text-[#D1BBFF] text-3xl">
-            <Link href="/">We Gamers</Link>
-          </h1>
-        </div>
-      </nav>
-      <div className="text-sm font-[yekan] lg:hidden fixed w-full bottom-0 left-0 border-[#888C8C] border-t-2 p-3 rtl bg-[#12141C] z-50">
-        <div className="flex justify-around text-[#888C8C]">
-          <div className="flex flex-col gap-2 items-center justify-center">
-            <Icon
-              icon="solar:hamburger-menu-line-duotone"
-              className="w-8 h-8"
-            />
-            <span>دسته بندی ها</span>
-          </div>
-          <div className="flex flex-col gap-2 items-center justify-center">
-            <Icon
-              icon="solar:rounded-magnifer-bold-duotone"
-              className="w-8 h-8"
-            />
-            <span>جستجو</span>
-          </div>
-          <div>
-            <Link
-              href="/"
-              className="flex flex-col gap-2 items-center justify-center"
-            >
-              <Icon
-                icon="solar:home-smile-angle-bold-duotone"
-                className="w-8 h-8"
-              />
-              <span>صفحه اصلی</span>
-            </Link>
-          </div>
-          <div>
-            <Link
-              href="/cart"
-              className="flex flex-col gap-2 items-center justify-center"
-            >
-              <Icon
-                icon="solar:cart-large-2-bold-duotone"
-                className="w-8 h-8"
-              />
-              <span>سبد خرید</span>
-            </Link>
-          </div>
-          <div>
-            <Link
-              href="/login"
-              className="flex flex-col gap-2 items-center justify-center"
-            >
-              <Icon icon="solar:user-bold-duotone" className="w-8 h-8" />
-              <span className=""> پروفایل</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

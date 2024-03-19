@@ -7,7 +7,6 @@ import ShopProductCard from "./product-card";
 export default function ShopPage() {
   return (
     <>
-      <MainHeader />
       <div className="py-24 rtl w-full pt-32 px-36 flex flex-col">
         <div className="flex justify-start items-start gap-5">
           <div className="flex justify-start items-start gap-2 py-5 px-12 font-[yekan]">

@@ -6,10 +6,9 @@ import ProductSlider from "@/components/base/sliders/products/product-slider";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-3 pt-36">
-      <MainHeader />
+    <div className="flex flex-col gap-3 pt-36">
       <MainSlider />
       <ProductSlider />
-    </main>
+    </div>
   );
 }
