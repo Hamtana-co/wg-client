@@ -13,10 +13,7 @@ export default async function AccountLayout({ children }: PropsWithChildren) {
 
   if (!user) redirect("/");
 
-  // console.log(user)
-
   return (
-    
     <html lang="en" className="dark">
       <body className="dark:bg-[#12141C] overflow-hidden">
         <Providers>{children}</Providers>

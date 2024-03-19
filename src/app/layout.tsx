@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import MainHeader from "@/components/base/headers/main-header";
+
 import { Providers } from "./providers";
-import MobileNavigation from "@/components/base/mobile-navigation";
-import MobileHeader from "@/components/base/headers/mobile-header";
+import MainHeader from "@/components/headers/main-header";
+import MobileHeader from "@/components/headers/mobile-header";
+import MobileNavigation from "@/components/mobile-navigation";
 
 export const metadata: Metadata = {
-  title: "We Gamers",
-  description: "Gaming Platform",
+  icons:"/ico.png",
+
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="fa-IR" dir="rtl" className="dark">
       <body className="dark:bg-[#12141C]">
         <main>
           <Providers>

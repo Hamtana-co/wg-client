@@ -1,24 +1,23 @@
 "use client";
 
-import MainHeader from "@/components/base/headers/main-header";
-import { Button, Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { userService } from "./service";
+import { userService, walletService } from "./service";
 import { useCookies } from "react-cookie";
-import { Metadata } from "next";
+import MainHeader from "@/components/headers/main-header";
 
 export default function Account() {
   const [cookies] = useCookies(["user"]);
+  console.log(cookies);
 
   const userQuery = useQuery({
     queryKey: ["GET_USER"],
-    queryFn: () => userService.get(cookies.user.id),
+    queryFn: () => userService.get(cookies.user.id, "relations[wallet]=true"),
   });
 
   const router = useRouter();
@@ -57,8 +56,8 @@ export default function Account() {
                 </div>
                 <div className="flex items-center justify-between w-full">
                   <span>کیف پول :</span>
-                  <span className="flex">
-                    <span>{userQuery.data?.data.wallet.balance}</span>
+                  <span className="flex items-center gap-1">
+                    <span>{userQuery.data?.data.wallet?.balance}</span>
                     <span>تومان</span>
                   </span>
                 </div>

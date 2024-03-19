@@ -1,6 +1,6 @@
 {
   "name": "wg-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

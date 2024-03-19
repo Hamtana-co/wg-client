@@ -10,7 +10,7 @@ export interface UserModel extends IBaseModel {
   about?: string;
   location?: string;
   public_email?: string;
-  wallet: WalletModel;
+  wallet?: WalletModel;
   role: RoleEnum;
   is_verified: boolean;
 }
