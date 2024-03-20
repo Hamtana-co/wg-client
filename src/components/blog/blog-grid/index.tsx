@@ -12,7 +12,7 @@ export default function BlogGrid({ posts }: IPostsProps) {
               key={`post-${item.slug}`}
               title={item.title}
               slug={item.slug}
-              image={item.image?.path}
+              image={item.image}
               image_alt={item.image_alt}
               author={item.author}
               short_desc={item.short_desc}

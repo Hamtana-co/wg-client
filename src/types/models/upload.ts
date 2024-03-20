@@ -7,6 +7,6 @@ export interface UploadModel extends IBaseModel {
     size: number;
     mimetype: string;
     path: string;
-    movies: PostModel[];
+    full_path: string;
   }
   
