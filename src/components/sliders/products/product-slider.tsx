@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Icon } from "@iconify/react";
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
-import SlideBox from "@/components/base/sliders/products/product-card";
+import SlideBox from "./product-card";
 
 export default function ProductSlider() {
   return (
@@ -16,14 +16,19 @@ export default function ProductSlider() {
       <div className="flex justify-center items-center py-8 text-orange-400">
         <div className="flex items-center gap-2 min-w-fit pl-4">
           <span>
-            <Icon icon="solar:fire-bold-duotone" className="w-12 h-12 text-amber-600" />
+            <Icon
+              icon="solar:fire-bold-duotone"
+              className="w-12 h-12 text-amber-600"
+            />
           </span>
           <h2 className="font-[montserrat] text-lg lg:text-xl font-black">
             پرفروش ترین محصولات
           </h2>
         </div>
         <span className="border-b-2 w-full border-amber-600"></span>
-        <div className="font-[yekan] text-white text-sm min-w-fit px-4 py-2 font-light bg-[#eb8532d8] border-b-4 border-[#a86127c7] rounded-2xl mr-4 ">مشاهده بیشتر</div>
+        <div className="font-[yekan] text-white text-sm min-w-fit px-4 py-2 font-light bg-[#eb8532d8] border-b-4 border-[#a86127c7] rounded-2xl mr-4 ">
+          مشاهده بیشتر
+        </div>
       </div>
       <div className="w-full h-full  mb-24 flex justify-center items-center">
         <Swiper
