@@ -2,16 +2,17 @@
 
 import { Icon } from "@iconify/react";
 import { postService, uploadService } from "./service";
-import { useQuery } from "@tanstack/react-query";
+
 import { useState } from "react";
 import BlogGrid from "./blog-grid";
+import { useQuery } from "@tanstack/react-query";
 
 export default function BlogPage() {
   const [page, setPage] = useState<number>(1);
 
   const postQuery = useQuery({
     queryKey: ["GET_POSTS"],
-    queryFn: () => postService.getAll(`relations[image]=true&select="full_path"`),
+    queryFn: () => postService.getAll(`relations[image]=true`),
   });
   console.log(postQuery)
 
