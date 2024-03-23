@@ -1,7 +1,8 @@
+import { IPostProps } from "../home/types";
 import CarouselCard from "./card";
 import { IItemProps } from "./types";
 
-export default function CarouselSlider({ sectionTitle, items }: IItemProps) {
+export default function CarouselSlider({ sectionTitle, items }: IPostProps) {
   return (
     <>
       <section className="flex flex-col rtl py-24">

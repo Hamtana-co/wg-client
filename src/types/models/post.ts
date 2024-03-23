@@ -5,10 +5,10 @@ import { UploadModel } from "./upload";
 export interface PostModel extends IBaseModel {
   title: string;
   slug: string;
-  image?: UploadModel;
+  image: UploadModel;
   image_alt?: string;
   author: string;
-  short_desc?: string;
+  short_desc: string;
   body: string;
   category: PostCategoryModel;
   view: number;
