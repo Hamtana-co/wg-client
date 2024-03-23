@@ -1,5 +1,4 @@
 "use client";
-import MainHeader from "@/components/base/headers/main-header";
 import { Input } from "@nextui-org/react";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
@@ -19,7 +18,6 @@ export default function SingleProduct() {
   const [thumbsSwiper, setThumbsSwiper] = useState(1);
   return (
     <>
-      <MainHeader />
       <div className="container w-full mx-auto rtl pt-32">
         <div className="flex justify-start items-start gap-5">
           <div className="flex justify-start items-start gap-2 py-5 px-12 font-[yekan]">

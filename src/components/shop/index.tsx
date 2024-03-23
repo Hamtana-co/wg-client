@@ -1,6 +1,5 @@
 "use client";
 
-import MainHeader from "../base/headers/main-header";
 import ShopFilter from "./filter";
 import ShopProductCard from "./product-card";
 

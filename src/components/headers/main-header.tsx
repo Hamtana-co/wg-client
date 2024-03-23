@@ -35,7 +35,7 @@ export default function MainHeader() {
                 </button>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 font-[peyda]">
               {/* <Link
                 href=""
                 className="relative bg-[#70737b47] border-b-4 border-[#10101147] py-[10px] px-[13px] flex justify-center items-center rounded-2xl text-white"
@@ -49,7 +49,7 @@ export default function MainHeader() {
               <MiniAccount />
             </div>
           </div>
-          <div className="flex items-center pt-3 px-2 gap-5 font-[yekan]">
+          <div className="flex items-center pt-3 px-2 gap-5 font-[peyda] font-semibold text-sm">
             {/* <div className="flex flex-col relative">
               <Link
                 href=""

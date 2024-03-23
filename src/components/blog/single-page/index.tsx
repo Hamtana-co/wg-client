@@ -3,14 +3,6 @@ import { useMutation } from "@tanstack/react-query";
 import { postService } from "../service";
 
 export default function SinglePage({ item }: any) {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
-
-  const movie = useMutation({
-    mutationKey: ["GET_MOVIE_MUTATION", item],
-    mutationFn: (item: string) => postService.get(item.slug, `relations[image]=true`),
-    onSuccess: () => onOpen(),
-  });
-
   return (
     <div className="container pt-36 mx-auto w-full font-[irsans]">
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-x-7 gap-y-8 mt-8 md:mt-10">
