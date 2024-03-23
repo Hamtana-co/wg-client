@@ -5,7 +5,6 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface IPostProps {
   items: PostModel[];
-  sectionTitle: string;
   isLoading: boolean;
   pagination?: IPagination;
   page: number;

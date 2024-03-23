@@ -24,9 +24,9 @@ export default function PostCard({
   time,
 }: IItems) {
   return (
-    <div className="max-w-[280px]">
+    <div className="max-w-[">
       <div className="rounded-3xl bg-[#70737b47] border-b-8 border-[#10101147] flex flex-col gap-5 hover:border-[#752AE1] p-2">
-        <div className="relative w-[264px] h-[200px]">
+        <div className="relative w-[260px] h-[200px]">
           <Image
             className="flex rounded-[16px] justify-center flex-col w-full h-full object-cover"
             src={image}

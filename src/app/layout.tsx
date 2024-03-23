@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa-IR" dir="rtl" className="dark">
-      <body className="dark:bg-[#12141C]">
-        <main>
+      <body className="w-screen dark:bg-[#151517] bg-[#f1f1f1] min-h-screen">
+        <main className="">
           <Providers>
             <MainHeader />
             <MobileHeader />

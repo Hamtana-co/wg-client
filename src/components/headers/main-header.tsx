@@ -14,7 +14,7 @@ export default function MainHeader() {
 
   return (
     <div>
-      <header className="hidden lg:flex w-full fixed top-0 left-0 px-24 rtl bg-[#12141C] z-30">
+      <header className="hidden lg:flex w-full fixed top-0 left-0 px-24 rtl bg-[#32303665] backdrop-blur-md z-30">
         <div className="flex flex-col border-b-2 border-[#888C8C] w-full py-3">
           <div className="flex justify-between items-center w-full px-2">
             <div className="flex items-center gap-5">

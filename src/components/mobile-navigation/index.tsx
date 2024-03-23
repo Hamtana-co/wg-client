@@ -2,53 +2,108 @@
 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 
 export default function MobileNavigation() {
+  const [trx, setTrx] = useState<string>("home");
+
+  console.log(trx);
+
   return (
-    <div className="text-sm font-[yekan] lg:hidden fixed w-full bottom-0 left-0 border-[#888C8C] border-t-2 p-2 rtl bg-[#12141C] z-50">
-      <div className="flex justify-around items-center text-[#888C8C]">
-        <div>
+    <div className="text-sm font-[peyda] font-medium lg:hidden fixed  bottom-4 left-3 right-3 rounded-[22px] px-2 py-3 rtl bg-[#dddddd21] backdrop-blur-lg z-30">
+      <div className="flex justify-around relative items-center text-white">
+        <button
+          onMouseEnter={() => setTrx("home")}
+          onClick={() => setTrx("home")}
+          className="relative  text-white"
+        >
           <Link
             href="/"
-            className="flex flex-col gap-1 items-center justify-center"
+            className="flex flex-col gap-2 items-center justify-center"
           >
-            <Icon
-              icon="solar:home-smile-angle-bold-duotone"
-              className="w-7 h-7"
-            />
+            <Icon icon="solar:home-angle-2-line-duotone" className="w-7 h-7" />
             <span>خانه</span>
           </Link>
-        </div>
-        <div className="flex flex-col gap-1 items-center justify-center">
-          <Icon icon="solar:hamburger-menu-line-duotone" className="w-7 h-7" />
-          <span>دسته بندی ها</span>
-        </div>
-        <div className="flex flex-col gap-1 items-center justify-center">
-          <Icon
-            icon="solar:rounded-magnifer-bold-duotone"
-            className="w-7 h-7"
-          />
-          <span>جستجو</span>
-        </div>
-
-        <div>
+          <span
+            className={`absolute ${
+              trx == "home" ? "block" : "hidden"
+            } w-12 h-12 bg-[#5b3bd1] rounded-full blur-md -z-10 top-0 -left-2`}
+          ></span>
+        </button>
+        <button
+          onMouseEnter={() => setTrx("tournament")}
+          onClick={() => setTrx("tournament")}
+        >
           <Link
-            href="/cart"
-            className="flex flex-col gap-1 items-center justify-center"
+            href="/team"
+            className=" relative flex flex-col gap-2 items-center justify-center"
           >
-            <Icon icon="solar:cart-large-2-bold-duotone" className="w-7 h-7" />
-            <span>سبد خرید</span>
+            <Icon icon="solar:cup-star-line-duotone" className="w-7 h-7" />
+            <span>تورنومنت</span>
+            <span
+              className={`absolute ${
+                trx == "tournament" ? "block" : "hidden"
+              } w-14 h-14 bg-[#5b3bd1] rounded-full blur-md -z-10 top-0 left-0`}
+            ></span>
           </Link>
-        </div>
-        <div>
+        </button>
+        <button
+          onMouseEnter={() => setTrx("team")}
+          onClick={() => setTrx("team")}
+        >
           <Link
-            href="/login"
-            className="flex flex-col gap-1 items-center justify-center"
+            href="/team"
+            className=" relative flex flex-col gap-2 items-center justify-center"
           >
-            <Icon icon="solar:user-bold-duotone" className="w-7 h-7" />
-            <span className=""> حساب کاربری</span>
+            <Icon
+              icon="solar:users-group-two-rounded-line-duotone"
+              className="w-7 h-7"
+            />
+            <span>تیم ها</span>
+            <span
+              className={`absolute ${
+                trx == "team" ? "block" : "hidden"
+              } w-12 h-12 bg-[#5b3bd1] rounded-full blur-md -z-10 top-0 -left-2`}
+            ></span>
           </Link>
-        </div>
+        </button>
+        <button
+          onMouseEnter={() => setTrx("blog")}
+          onClick={() => setTrx("blog")}
+        >
+          <Link
+            href="/blog"
+            className=" relative flex flex-col gap-2 items-center justify-center"
+          >
+            <Icon icon="solar:document-text-line-duotone" className="w-7 h-7" />
+            <span>وبلاگ</span>
+            <span
+              className={`absolute ${
+                trx == "blog" ? "block" : "hidden"
+              } w-12 h-12 bg-[#5b3bd1] rounded-full blur-md -z-10 top-0 -left-2`}
+            ></span>
+          </Link>
+        </button>
+        <button
+          onMouseEnter={() => setTrx("support")}
+          onClick={() => setTrx("support")}
+        >
+          <Link
+            href="/support"
+            className="relative flex flex-col gap-2 items-center justify-center"
+          >
+            <Icon
+              icon="solar:headphones-round-sound-line-duotone"
+              className="w-7 h-7"
+            />
+            <span className="">پشتیبانی</span>
+            <span
+              className={`absolute ${
+                trx == "support" ? "block" : "hidden"
+              } w-12 h-12 bg-[#5b3bd1] rounded-full blur-md -z-10 top-0 left-0`}
+            ></span>
+          </Link>
+        </button>
       </div>
     </div>
   );
