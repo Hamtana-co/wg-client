@@ -2,10 +2,10 @@ import { IPostProps } from "../home/types";
 import CarouselCard from "./card";
 import { IItemProps } from "./types";
 
-export default function CarouselSlider({ sectionTitle, items }: IPostProps) {
+export default function CarouselSlider({ items }: IPostProps) {
   return (
     <>
-      <section className="flex flex-col rtl py-24">
+      {/* <section className="flex flex-col rtl py-24">
         <div className="pb-8">
           <h2 className="text-white text-2xl">{sectionTitle}</h2>
         </div>
@@ -24,7 +24,7 @@ export default function CarouselSlider({ sectionTitle, items }: IPostProps) {
             </div>
           )}
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
