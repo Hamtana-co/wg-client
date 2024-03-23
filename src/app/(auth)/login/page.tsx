@@ -66,10 +66,10 @@ export default function Login() {
           <h4 className="text-white font-[montserrat] font-bold text-xl">
             ورود به حساب کاربری
           </h4>
-          <button className="bg-[#ffffff] font-[yekan] border-b-4 border-[#cac9ce] w-full py-4 flex justify-center items-center rounded-2xl text-base font-bold text-[#2a2d31] gap-2">
+          {/* <button className="bg-[#ffffff] font-[yekan] border-b-4 border-[#cac9ce] w-full py-4 flex justify-center items-center rounded-2xl text-base font-bold text-[#2a2d31] gap-2">
             <Icon icon="devicon:google" className="w-6 h-6" />
             <span>ورود با حساب گوگل</span>
-          </button>
+          </button> */}
 
           <form
             onSubmit={onSubmit}

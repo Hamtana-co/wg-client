@@ -66,10 +66,10 @@ export default function Register() {
               <span>یا با حساب کاربری گوگل خود وارد شوید</span>
             </p>
           </div>
-          <button className="bg-[#ffffff] border-b-4 border-[#cac9ce] w-full py-4 flex justify-center items-center rounded-2xl text-base font-bold text-[#2a2d31] gap-2">
+          {/* <button className="bg-[#ffffff] border-b-4 border-[#cac9ce] w-full py-4 flex justify-center items-center rounded-2xl text-base font-bold text-[#2a2d31] gap-2">
             <Icon icon="devicon:google" className="w-6 h-6" />
             <span>عضویت با حساب گوگل</span>
-          </button>
+          </button> */}
           <form
             onSubmit={onSubmit}
             className="flex flex-col gap-6 w-full font-[yekan]"
