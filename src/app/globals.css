@@ -165,15 +165,9 @@ body {
   }
 }
 
-#stickyheaders{
-  -webkit-transition: transform 0.34s ease;
-  transition : transform 0.34s ease;
-  }
-  .headerup{
-  transform: translateY(-110px); /*adjust this value to the height of your header*/
-  }
-  
-
+.tt{
+  backdrop-filter: blur(10px);
+}
 
 @tailwind base;
 @tailwind components;
