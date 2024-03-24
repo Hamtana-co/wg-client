@@ -1,0 +1,9 @@
+User-Agent: *
+Allow: /
+Allow: /blog/
+Allow: /about-us/
+Disallow: /cart/
+Disallow: /upload/*
+Disallow: /private/
+
+Sitemap: https://wegamers.ir/sitemap.xml
