@@ -13,13 +13,12 @@ import MainHeader from "@/components/headers/main-header";
 
 export default function Account() {
   const [cookies] = useCookies(["user"]);
-
   const userQuery = useQuery({
     queryKey: ["GET_USER"],
     queryFn: () => userService.get(cookies.user.id, "relations[wallet]=true"),
   });
 
-  console.log(userQuery)
+  console.log(userQuery);
   const router = useRouter();
   const logoutMutation = useMutation({
     mutationKey: ["LOGOUT"],

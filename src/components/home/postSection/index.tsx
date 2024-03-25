@@ -41,7 +41,7 @@ export default function PostSection({ items }: IPostProps) {
                   title={item.title}
                   short_desc={item.short_desc}
                   image={item.image?.full_path}
-                  author={item.author}
+                  author={item.author.username}
                   time={
                     (item.updated_at = new Date().toLocaleDateString("fa-IR"))
                   }
