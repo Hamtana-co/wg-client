@@ -1,9 +1,9 @@
 "use client";
 
-import TeamCard from "../team-card";
+import TeamCard from "../tournament-card";
 import { ITournamentProps } from "../types";
 
-export default function TeamGrid({ tournaments }: ITournamentProps) {
+export default function TournamentGrid({ tournaments }: ITournamentProps) {
   return (
     <div className="flex justify-start items-start">
       <div className="posts_wrap grid grid-rows-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 ">

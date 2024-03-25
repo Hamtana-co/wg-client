@@ -2,7 +2,6 @@
 
 import { Icon } from "@iconify/react";
 import { postService, uploadService } from "./service";
-
 import { useState } from "react";
 import BlogGrid from "./blog-grid";
 import { useQuery } from "@tanstack/react-query";
@@ -12,9 +11,9 @@ export default function BlogPage() {
 
   const postQuery = useQuery({
     queryKey: ["GET_POSTS"],
-    queryFn: () => postService.getAll(`relations[image]=true`),
+    queryFn: () => postService.getAll(`page=${page}&relations[image]=true&relations[category]=true&relations[author]=true`),
   });
-  console.log(postQuery)
+  console.log(postQuery);
 
   return (
     <div className="container mx-auto w-full flex flex-col rtl pt-36">

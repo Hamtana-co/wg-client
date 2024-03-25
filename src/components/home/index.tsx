@@ -14,7 +14,7 @@ export default function HomePage() {
   const postQuery = useQuery({
     queryKey: ["GET_ARTICELS"],
     queryFn: () =>
-      postService.getAll(`relations[image]=true&relations[category]=true`),
+      postService.getAll(`relations[image]=true&relations[category]=true&relations[author]=true`),
   });
   console.log(postQuery);
   return (

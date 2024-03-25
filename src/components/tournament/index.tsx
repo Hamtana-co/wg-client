@@ -4,9 +4,9 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { tournamentService } from "./service";
-import TeamGrid from "./team-grid";
+import TeamGrid from "./tournament-grid";
 
-export default function TeamPage() {
+export default function TournamentPage() {
   const [page, setPage] = useState<number>(1);
 
   const tournamentQuery = useQuery({

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function TeamCard({ title, slug }: any) {
+export default function TournamentCard({ title, slug }: any) {
   return (
     <div className="blog flex flex-col font-[irsans] max-w-80 bg-white dark:bg-[#ffffff14] border  border-neutral-100 dark:border-none overflow-hidden rounded-3xl">
       <div className="p-3 h-[220px] overflow-hidden">

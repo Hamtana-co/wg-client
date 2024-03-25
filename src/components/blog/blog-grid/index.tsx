@@ -14,9 +14,9 @@ export default function BlogGrid({ posts }: IPostsProps) {
               slug={item.slug}
               image={item.image?.full_path}
               image_alt={item.image_alt}
-              author={item.author}
+              author={item.author.username}
               short_desc={item.short_desc}
-              category={item.category}
+              category={item.category.name}
             />
           ))
         ) : (

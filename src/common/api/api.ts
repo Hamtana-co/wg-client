@@ -35,6 +35,12 @@ export class CrudService<T> {
     return api.get<T>(`/${entity}/${unique}?${query}`);
   }
 
+  async getSlug(unique: string, query: string = "", sub?: string) {
+    let entity = this.entity;
+    if (sub) entity = `${entity}/${sub}`;
+    return api.get<T>(`/${entity}/${unique}?${query}`);
+  }
+
   async post(body: any, sub?: string) {
     let entity = this.entity;
     if (sub) entity = `${entity}/${sub}`;
