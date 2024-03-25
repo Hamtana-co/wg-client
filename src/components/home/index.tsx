@@ -16,7 +16,7 @@ export default function HomePage() {
     queryFn: () =>
       postService.getAll(`relations[image]=true&relations[category]=true`),
   });
-
+  console.log(postQuery);
   return (
     <div className="container mx-auto w-full pt-28 md:pt-36">
       {postQuery.isSuccess == true ? (

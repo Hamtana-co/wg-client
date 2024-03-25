@@ -24,7 +24,12 @@ export default function PostSection({ items }: IPostProps) {
             <Divider />
           </div>
           <div className="">
-            <Link href="/blog" className="text-sm w-full px-3 py-2 bg-[#ffffff14] rounded-xl">مشاهده بیشتر</Link>
+            <Link
+              href="/blog"
+              className="text-sm w-full px-3 py-2 bg-[#ffffff14] rounded-xl"
+            >
+              مشاهده بیشتر
+            </Link>
           </div>
         </section>
         <section>
@@ -38,10 +43,7 @@ export default function PostSection({ items }: IPostProps) {
                   image={item.image?.full_path}
                   author={item.author}
                   time={
-                    (item.updated_at = new Date().toLocaleDateString(
-                      "fa-IR",
-                      {}
-                    ))
+                    (item.updated_at = new Date().toLocaleDateString("fa-IR"))
                   }
                   category={item.category.name}
                   slug={item.slug}

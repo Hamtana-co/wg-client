@@ -1,20 +1,19 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { postService, uploadService } from "./service";
-
 import { useState } from "react";
-import BlogGrid from "./blog-grid";
 import { useQuery } from "@tanstack/react-query";
+import { tournamentService } from "./service";
+import TeamGrid from "./team-grid";
 
-export default function BlogPage() {
+export default function TeamPage() {
   const [page, setPage] = useState<number>(1);
 
-  const postQuery = useQuery({
+  const tournamentQuery = useQuery({
     queryKey: ["GET_POSTS"],
-    queryFn: () => postService.getAll(`relations[image]=true`),
+    queryFn: () => tournamentService.getAll(),
   });
-  console.log(postQuery)
+  console.log(tournamentQuery);
 
   return (
     <div className="container mx-auto w-full flex flex-col rtl pt-36">
@@ -22,7 +21,7 @@ export default function BlogPage() {
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-block w-4 h-4 bg-amber-400 rounded-sm"></span>
           <h2 className="text-center font-[peyda] text-2xl lg:text-2.5xl font-black">
-            وبلاگ
+            تورنومنت ها
           </h2>
         </div>
       </div>
@@ -98,10 +97,10 @@ export default function BlogPage() {
               </a>
             </div>
           </div>
-          <BlogGrid
-            posts={postQuery.data?.data.result || []}
-            isLoading={postQuery.isLoading}
-            pagination={postQuery.data?.data.pagination}
+          <TeamGrid
+            tournaments={tournamentQuery.data?.data.result || []}
+            isLoading={tournamentQuery.isLoading}
+            pagination={tournamentQuery.data?.data.pagination}
             page={page}
             setPage={setPage}
           />

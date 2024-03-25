@@ -13,7 +13,7 @@ export default function BlogCard({
   category,
 }: any) {
   return (
-    <div className="blog flex flex-col font-[irsans] max-w-80 bg-white dark:bg-[#242a38] border  border-neutral-100 dark:border-none overflow-hidden rounded-3xl">
+    <div className="blog flex flex-col font-[irsans] max-w-80 bg-white dark:bg-[#ffffff14] border  border-neutral-100 dark:border-none overflow-hidden rounded-3xl">
       <div className="p-3 h-[220px] overflow-hidden">
         <Link href={`/blog/${slug}`}>
           <Image

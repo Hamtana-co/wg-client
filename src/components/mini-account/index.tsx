@@ -31,11 +31,11 @@ export default function MiniAccount() {
               onMouseLeave={() => setAccountHover(0)}
               className={
                 accountHover == 1
-                  ? "absolute top-[55px] left-0 min-w-56 w-fit p-5 h-fit z-50 bg-[#20222b] rounded-3xl flex flex-col"
+                  ? "absolute top-[55px] left-0 min-w-56 w-fit p-5 h-fit z-50 bg-[#2c2b30] rounded-3xl flex flex-col"
                   : "hidden"
               }
             >
-              <ul className="flex flex-col items-start gap-5 text-sm font-[yekan]">
+              <ul className="flex flex-col items-start gap-5 text-sm font-[peyda]">
                 <li className="flex items-center gap-1 border-b-2 pb-3 w-full">
                   <Icon icon="solar:user-bold-duotone" className="w-6 h-6" />
                   <span>{cookies.user.username}</span>
@@ -57,7 +57,7 @@ export default function MiniAccount() {
                     </span>
                   </button>
                 </li>
-                <li>
+                {/* <li>
                   <button className="flex items-center gap-2 ">
                     <Icon
                       icon="solar:cart-3-bold-duotone"
@@ -65,11 +65,22 @@ export default function MiniAccount() {
                     />
                     سفارش ها
                   </button>
-                </li>
-                <li>
-                  <button className="flex items-center gap-2 ">
-                    <Icon icon="solar:bell-bold-duotone" className="w-6 h-6" />
-                    پیام ها
+                </li> */}
+                <li className="w-full">
+                  <button className="flex items-center gap-2 w-full">
+                    <span className="flex w-full justify-between">
+                      <span className="flex items-center gap-2">
+                        <Icon
+                          icon="solar:bell-bold-duotone"
+                          className="w-6 h-6"
+                        />
+                        پیام ها
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <span>2</span>
+                        <span>پیام جدید</span>
+                      </span>
+                    </span>
                   </button>
                 </li>
                 <li>

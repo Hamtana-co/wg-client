@@ -84,7 +84,7 @@ export default function MainHeader() {
               صفحه اصلی
             </Link>
             <Link
-              href="/blog"
+              href="/team"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:bookmark-bold-duotone" className="w-6 h-6" />
@@ -104,13 +104,14 @@ export default function MainHeader() {
               <Icon icon="solar:shop-bold-duotone" className="w-6 h-6" />
               فروشگاه
             </Link>
+            */}
             <Link
               href="/tournament"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
             >
               <Icon icon="solar:cup-bold-duotone" className="w-6 h-6" />
               تورنومنت
-            </Link> */}
+            </Link>
             <Link
               href="/blog"
               className=" flex justify-center items-center rounded-2xl text-[#888C8C] hover:text-[#D1BBFF] gap-2"
