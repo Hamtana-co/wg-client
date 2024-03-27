@@ -98,18 +98,11 @@ export default function MiniAccount() {
         ) : (
           <div className="flex items-center gap-2">
             <Link
-              href="/login"
-              className="bg-[#70737b47] border-b-4 border-[#10101147] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
-            >
-              <span>ورود</span>
-              <Icon icon="solar:user-bold-duotone" className="w-7 h-7" />
-            </Link>
-            <Link
-              href="/register"
+              href="/auth"
               className="bg-[#8762D8] border-b-4 border-[#6C43E2] min-h-10 py-[10px] px-4 flex justify-center items-center rounded-2xl text-white gap-2"
             >
-              <span>ثبت نام</span>
-              <Icon icon="solar:user-plus-bold-duotone" className="w-7 h-7" />
+              <Icon icon="solar:user-broken" className="w-7 h-7" />
+              <span>ورود / ثبت نام</span>
             </Link>
           </div>
         )}

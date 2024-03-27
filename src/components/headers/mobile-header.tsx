@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { CookiesProvider } from "react-cookie";
+import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function MobileHeader() {
+  const router = useRouter();
   const [isHidden, setIsHidden] = useState(true);
   const [popUp, setPopUp] = useState(false);
   const [hambergerMenu, sethambergerMenu] = useState(false);
@@ -30,6 +33,7 @@ export default function MobileHeader() {
     };
   }, []);
   const [cookies] = useCookies(["user"]);
+
   return (
     <nav
       className={
@@ -42,10 +46,7 @@ export default function MobileHeader() {
         <button onClick={() => sethambergerMenu(true)}>
           <Icon icon="solar:hamburger-menu-line-duotone" className="w-7 h-7" />
           {hambergerMenu == true ? (
-            <div
-              onTouchStart={() => sethambergerMenu(false)}
-              className="absolute w-[100vw] bg-[#5b595eb9] h-screen top-0 right-0 z-40 "
-            >
+            <div className="absolute w-[100vw] bg-[#5b595eb9] h-screen top-0 right-0 z-40 ">
               <div className="bg-[#201f22] w-[60vw] h-screen  p-3 flex flex-col justify-start items-start gap-5">
                 <div className="flex justify-between items-center w-full border-b-2 pb-3">
                   <h1 className="text-[#D1BBFF] text-xl">
@@ -72,6 +73,8 @@ export default function MobileHeader() {
                   قوانین سایت
                 </Link> */}
                 <Link
+                  onTouchStart={() => sethambergerMenu(false)}
+                  onClick={() => sethambergerMenu(false)}
                   href="/faq"
                   className="flex justify-start items-center gap-2 w-full px-2"
                 >
@@ -81,16 +84,13 @@ export default function MobileHeader() {
                   />
                   سوالات متداول
                 </Link>
-                <Link
-                  href="/contact-us"
-                  className="flex justify-start items-center gap-2 w-full px-2"
-                >
+                <button className="flex justify-start items-center gap-2 w-full px-2">
                   <Icon
                     icon="solar:phone-calling-bold-duotone"
                     className="w-6 h-6"
                   />
                   تماس با ما
-                </Link>
+                </button>
                 <Link
                   href="/about-us"
                   className="flex justify-start items-center gap-2 w-full px-2"
@@ -123,44 +123,12 @@ export default function MobileHeader() {
             </Link>
           ) : (
             <div className="flex items-center gap-2">
-              <button onClick={() => setPopUp(true)}>
+              <Link href="/auth">
                 <Icon icon="solar:user-bold-duotone" className="w-7 h-7" />
-              </button>
+              </Link>
             </div>
           )}
         </CookiesProvider>
-        {popUp == true ? (
-          <div className="absolute w-screen h-screen top-0  left-0 z-40 ">
-            <div className="bg-[#201f22f1] w-screen h-screen backdrop-blur-2xl p-3 flex flex-col justify-center items-start gap-2">
-              <Link
-                href="/register"
-                className="flex justify-center items-center gap-2 w-full px-2 py-4  rounded-lg bg-[#7567C7]"
-              >
-                <Icon icon="solar:user-plus-bold-duotone" className="w-6 h-6" />
-                ثبت نام در سایت
-              </Link>
-              <Link
-                href="/login"
-                className="flex justify-center items-center gap-2 w-full px-2 py-4  rounded-lg bg-emerald-700"
-              >
-                <Icon icon="solar:user-bold-duotone" className="w-6 h-6" />
-                ورود به حساب
-              </Link>
-              <button
-                onClick={() => setPopUp(false)}
-                className="flex justify-center items-center bg-rose-800 w-full px-2 py-4  gap-2 rounded-lg"
-              >
-                <Icon
-                  icon="solar:close-square-bold-duotone"
-                  className="w-6 h-6"
-                />
-                بستن
-              </button>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
       </div>
     </nav>
   );

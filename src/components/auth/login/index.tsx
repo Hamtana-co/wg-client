@@ -11,7 +11,7 @@ import { RoleEnum } from "@/types/enums/role";
 import { useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
 
-export default function Login() {
+export default function LoginPage() {
   const router = useRouter();
   const [error, setError] = useState<string | undefined>();
 
@@ -47,23 +47,10 @@ export default function Login() {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <main className="w-screen h-screen flex flex-col justify-center items-center rtl">
-      <div className="w-full flex flex-col-reverse justify-center items-center h-full gap-4 px-4 lg:gap-12 lg:px-24">
-        <div className="rounded-[35px] max-w-[420px] max-h-[620px] w-full h-full p-5 border-2 border-[#ffffff4a] flex flex-col justify-between items-center gap-5  bg-[#70737b1c] ">
-          <div className="flex justify-between items-center w-full px-2">
-            <Link href="/" className="flex items-center gap-2 text-white">
-              <Icon
-                icon="solar:square-alt-arrow-right-bold-duotone"
-                className="w-5 h-5"
-              />
-              بازگشت به خانه
-            </Link>
-            <h1 className="text-[#D1BBFF] text-3xl ">
-              <Link href="/">We Gamers</Link>
-            </h1>
-          </div>
-          <span className="border-b-2 border-[#888C8C] w-full"></span>
-          <h4 className="text-white font-[montserrat] font-bold text-xl">
+    <main className="flex flex-col justify-center items-center rtl">
+      <div className="w-full flex flex-col-reverse justify-start items-center gap-4 px-4 lg:gap-12 lg:px-24">
+        <div className="rounded-[35px] min-w-[350px] max-w-[420px]  w-full  p-5 border-2 border-[#ffffff4a] flex flex-col justify-start items-center gap-5  bg-[#70737b1c] ">
+          <h4 className="text-white font-[peyda] font-bold text-xl py-9">
             ورود به حساب کاربری
           </h4>
           {/* <button className="bg-[#ffffff] font-[yekan] border-b-4 border-[#cac9ce] w-full py-4 flex justify-center items-center rounded-2xl text-base font-bold text-[#2a2d31] gap-2">
@@ -73,7 +60,7 @@ export default function Login() {
 
           <form
             onSubmit={onSubmit}
-            className="flex flex-col gap-6 w-full font-[yekan]"
+            className="flex flex-col gap-6 w-full font-[peyda]"
           >
             <input
               name="email"
@@ -106,13 +93,6 @@ export default function Login() {
                 <Icon icon="solar:user-bold-duotone" className="w-6 h-6" />
                 <span>ورود به حساب</span>
               </Button>
-              <Link
-                href="/register"
-                className="bg-[#70737b47] border-b-4 border-[#10101147] w-full py-4 px-2 flex justify-center items-center rounded-2xl text-white gap-2"
-              >
-                <Icon icon="solar:user-plus-bold-duotone" className="w-6 h-6" />
-                <span>عضویت در سایت</span>
-              </Link>
             </div>
           </form>
         </div>
