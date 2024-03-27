@@ -6,9 +6,6 @@ import { useState } from "react";
 
 export default function MobileNavigation() {
   const [trx, setTrx] = useState<string>("home");
-
-  console.log(trx);
-
   return (
     <div className="text-sm font-[peyda] font-medium lg:hidden fixed  bottom-4 left-3 right-3 rounded-[22px] px-2 py-3 rtl bg-[#dddddd21] backdrop-blur-lg z-30">
       <div className="flex justify-around relative items-center text-white">

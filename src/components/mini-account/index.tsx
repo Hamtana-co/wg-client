@@ -5,10 +5,21 @@ import Image from "next/image";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { CookiesProvider, useCookies } from "react-cookie";
+import { userService } from "../account/service";
+import { useQuery } from "@tanstack/react-query";
 
 export default function MiniAccount() {
   const [cookies] = useCookies(["user"]);
   const [accountHover, setAccountHover] = useState(0);
+
+  const userQuery = useQuery({
+    queryKey: ["GET_USER"],
+    queryFn: () =>
+      userService.get(
+        cookies.user.id,
+        "relations[wallet]=true&relations[profile]=true"
+      ),
+  });
 
   return (
     <>
@@ -22,7 +33,7 @@ export default function MiniAccount() {
             <span>حساب کاربری</span>
             <Image
               className="w-7 h-7 rounded-full"
-              src="/getfile.png"
+              src={userQuery.data?.data.profile?.full_path || `/getfile.png`}
               width={100}
               height={100}
               alt="test"

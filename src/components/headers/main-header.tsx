@@ -3,9 +3,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-
-import MiniCart from "../cart/mini-cart";
-import { cookies } from "next/headers";
 import MiniAccount from "../mini-account";
 
 export default function MainHeader() {

@@ -15,7 +15,7 @@ export default async function AccountLayout({ children }: PropsWithChildren) {
 
   return (
     <html lang="en" className="dark">
-      <body className="dark:bg-[#12141C] overflow-hidden">
+      <body className="dark:bg-[#151517] overflow-hidden">
         <Providers>{children}</Providers>
       </body>
     </html>

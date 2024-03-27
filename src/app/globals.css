@@ -58,6 +58,10 @@ body {
   direction: rtl;
 }
 
+.ltr {
+  direction: ltr;
+}
+
 .dark .blog__banner:after {
   background: linear-gradient(180deg, #242a3800, #242a38cc 74.19%, #242a38);
 }
@@ -163,10 +167,6 @@ body {
   .swiper-button-next {
     display: flex !important;
   }
-}
-
-.tt{
-  backdrop-filter: blur(10px);
 }
 
 @tailwind base;

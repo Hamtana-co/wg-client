@@ -13,8 +13,6 @@ export default function SingleBlog({ params }: { params: { slug: string } }) {
         `relations[image]=true&relations[author]=true`
       ),
   });
-
-  console.log(postQuery);
   return (
     <SinglePage
       title={postQuery.data?.data.title}

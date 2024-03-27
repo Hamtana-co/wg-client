@@ -1,5 +1,6 @@
 import { RoleEnum } from "../enums/role";
 import { IBaseModel } from "../interfaces/base.interface";
+import { UploadModel } from "./upload";
 import { WalletModel } from "./wallet";
 
 export interface UserModel extends IBaseModel {
@@ -12,5 +13,9 @@ export interface UserModel extends IBaseModel {
   public_email?: string;
   wallet?: WalletModel;
   role: RoleEnum;
-  is_verified: boolean;
+  profile?: UploadModel;
+  phone_number?: string;
+  email_verified: boolean;
+  level_one_verified: boolean;
+  full_verified: boolean;
 }
