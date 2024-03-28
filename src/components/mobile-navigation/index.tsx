@@ -4,9 +4,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-export default function MobileNavigation({ params }: { params: { slug: string } }) {
-  console.log(params)
-
+export default function MobileNavigation() {
   const [trx, setTrx] = useState<string>("home");
   return (
     <div className="text-sm font-[peyda] font-medium lg:hidden fixed  bottom-4 left-3 right-3 rounded-[22px] px-2 py-3 rtl bg-[#dddddd21] backdrop-blur-lg z-30">
