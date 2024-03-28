@@ -8,7 +8,6 @@ import MobileNavigation from "@/components/mobile-navigation";
 
 export const metadata: Metadata = {
   icons:"/ico.png",
-
 };
 
 export default function RootLayout({

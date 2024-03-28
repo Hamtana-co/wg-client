@@ -1,14 +1,14 @@
 import { Divider } from "@nextui-org/react";
-import { IPostProps } from "../types";
-import PostCard from "./postCard";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import TeamCard from "./teamCard";
+import { ITeamProps } from "./types";
 
-export default function PostSection({ posts }: IPostProps) {
+export default function TeamSection({ teams }: ITeamProps) {
   return (
     <div className="flex justify-center px-2">
       <div className="w-full lg:max-w-[1400px] py-10 md:py-24">
-        <section className="flex  items-center pb-8 justify-between w-full">
+        <section className="flex items-center pb-8 justify-between w-full">
           <div className="flex items-center gap-2 text-[#7567C7] ">
             <span className="">
               <Icon
@@ -17,41 +17,32 @@ export default function PostSection({ posts }: IPostProps) {
               />
             </span>
             <h2 className="text-center font-[peyda] text-lg md:text-2xl lg:text-2.5xl font-black">
-              جدید ترین مطالب
+              جدید ترین تیم ها
             </h2>
           </div>
           <div className="hidden">
             <Divider />
           </div>
           <div className="">
-            <Link
-              href="/blog"
-              className="text-sm w-full px-3 py-2 "
-            >
+            <Link href="/team" className="text-sm w-full px-3 py-2 ">
               مشاهده همه
             </Link>
           </div>
         </section>
         <section>
           <div className="flex justify-start items-center gap-10 overflow-y-auto">
-            {posts.length >= 1 ? (
-              posts.map((item) => (
-                <PostCard
+            {teams.length >= 1 ? (
+              teams.map((item) => (
+                <TeamCard
                   key={`team-${item.id}`}
-                  title={item.title}
-                  short_desc={item.short_desc}
-                  image={item.image?.full_path}
-                  author={item.author.username}
-                  time={
-                    (item.updated_at = new Date().toLocaleDateString("fa-IR"))
-                  }
-                  category={item.category.name}
+                  team_name={item.team_name}
+                  logo={item.logo?.full_path}
                   slug={item.slug}
                 />
               ))
             ) : (
               <div>
-                <p className="text-white">مطلبی موجود نیست</p>
+                <p className="text-white">تیمی موجود نیست</p>
               </div>
             )}
           </div>

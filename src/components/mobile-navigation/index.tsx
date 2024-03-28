@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ params }: { params: { slug: string } }) {
+  console.log(params)
+
   const [trx, setTrx] = useState<string>("home");
   return (
     <div className="text-sm font-[peyda] font-medium lg:hidden fixed  bottom-4 left-3 right-3 rounded-[22px] px-2 py-3 rtl bg-[#dddddd21] backdrop-blur-lg z-30">
@@ -32,7 +34,7 @@ export default function MobileNavigation() {
           onClick={() => setTrx("tournament")}
         >
           <Link
-            href="/team"
+            href="/tournament"
             className=" relative flex flex-col gap-2 items-center justify-center"
           >
             <Icon icon="solar:cup-star-line-duotone" className="w-7 h-7" />

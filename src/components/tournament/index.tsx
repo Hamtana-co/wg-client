@@ -11,7 +11,10 @@ export default function TournamentPage() {
 
   const tournamentQuery = useQuery({
     queryKey: ["GET_POSTS"],
-    queryFn: () => tournamentService.getAll(),
+    queryFn: () =>
+      tournamentService.getAll(
+        `relations[cover]=true&relations[game]=true&relations[platform]=true`
+      ),
   });
   console.log(tournamentQuery);
 
@@ -26,9 +29,9 @@ export default function TournamentPage() {
         </div>
       </div>
       <section className="grid grid-cols-12 gap-y-5 md:gap-x-7 pb-32">
-        <aside className="col-span-full lg:col-span-4 xl:col-span-3 lg:sticky top-6 space-y-6">
+        <aside className="col-span-full lg:col-span-4 xl:col-span-3 lg:sticky top-6 space-y-6 px-2">
           <form className="space-y-6">
-            <div className="h-16 bg-white dark:bg-[#ffffff14] rounded-xl p-4 md:p-5">
+            <div className="h-16 bg-white dark:bg-[#ffffff14] rounded-xl p-4 md:p-5 ">
               <div className="flex justify-between gap-x-6 h-full text-slate-500 dark:text-white ">
                 <input
                   type="text"
@@ -46,15 +49,7 @@ export default function TournamentPage() {
             </div>
           </form>
         </aside>
-        <section className="col-span-full lg:col-span-8 xl:col-span-9 order-1 lg:order-2">
-          <div className="flex md:hidden items-center gap-6 mb-8">
-            <div className="button button-xl button-white w-full" id="sort-btn">
-              <svg className="w-6 h-6 shrink-0">
-                <use href="#arrows-up-down"></use>
-              </svg>
-              <span className="active_sort_title">عادی</span>
-            </div>
-          </div>
+        <section className="col-span-full lg:col-span-8 xl:col-span-9 order-1 lg:order-2 px-2">
           <div className="hidden md:flex items-center gap-x-6 px-5 mb-8 h-16 bg-white dark:bg-[#ffffff14] shadow-normal dark:shadow-none rounded-xl">
             <div className="flex items-center shrink-0 gap-x-2">
               <svg className="w-7 h-7">

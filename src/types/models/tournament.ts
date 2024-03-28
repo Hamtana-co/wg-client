@@ -17,6 +17,6 @@ export interface TournamentModel extends IBaseModel {
   game: GameModel;
   max_players: number;
   play_mode: string;
-  date: Date;
+  date: string;
   joined_players: TournamentUserModel[];
 }

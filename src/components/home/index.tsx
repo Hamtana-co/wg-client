@@ -1,32 +1,53 @@
 "use client";
 
-import { TeamModel } from "@/types/models/team";
-import CarouselSlider from "../carousel-slider";
 import { useQuery } from "@tanstack/react-query";
-import { teamService } from "@/app/service";
-import { useState } from "react";
 import { postService } from "../blog/service";
 import PostSection from "./postSection";
-import { Card, Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@nextui-org/react";
+import TeamSection from "./teamSection";
+import { teamService } from "../team/service";
+import { tournamentService } from "../tournament/service";
+import TournamentSection from "./tournamentSection";
 
 export default function HomePage() {
-  const [page, setPage] = useState<number>(1);
   const postQuery = useQuery({
     queryKey: ["GET_ARTICELS"],
     queryFn: () =>
-      postService.getAll(`relations[image]=true&relations[category]=true&relations[author]=true`),
+      postService.getAll(
+        `relations[image]=true&relations[category]=true&relations[author]=true`
+      ),
   });
-  console.log(postQuery);
+
+  const teamQuery = useQuery({
+    queryKey: ["GET_TEAMS"],
+    queryFn: () => teamService.getAll(`relations[logo]=true`),
+  });
+
+  const tournamentQuery = useQuery({
+    queryKey: ["GET_TOURNAMENTS"],
+    queryFn: () =>
+      tournamentService.getAll(
+        `relations[cover]=true&relations[game]=true&relations[platform]=true`
+      ),
+  });
+  console.log("sss", tournamentQuery);
   return (
-    <div className="container mx-auto w-full pt-28 md:pt-36">
+    <div className="container mx-auto w-full py-28 md:pt-36">
       {postQuery.isSuccess == true ? (
-        <PostSection
-          items={postQuery.data?.data.result || []}
-          isLoading={postQuery.isLoading}
-          pagination={postQuery.data?.data.pagination}
-          page={page}
-          setPage={setPage}
-        />
+        <div>
+          <PostSection
+            posts={postQuery.data?.data.result || []}
+            isLoading={postQuery.isLoading}
+          />
+          <TeamSection
+            teams={teamQuery.data?.data.result || []}
+            isLoading={teamQuery.isLoading}
+          />
+          <TournamentSection
+            tournaments={tournamentQuery.data?.data.result || []}
+            isLoading={tournamentQuery.isLoading}
+          />
+        </div>
       ) : (
         <div className="w-full max-w-[1400px] py-24 overflow-y-hidden">
           <section className="flex pb-8">

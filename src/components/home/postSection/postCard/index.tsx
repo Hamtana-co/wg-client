@@ -39,7 +39,7 @@ export default function PostCard({
           </span>
         </div>
         <div className="px-2">
-          <span className="text-white font-[peyda] font-medium text-[22px] line-clamp-1">
+          <span className="text-white font-[peyda] font-medium text-base lg:text-[22px] line-clamp-1">
             {title}
           </span>
         </div>

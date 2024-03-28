@@ -1,5 +1,5 @@
-import TeamPage from "@/components/team";
+import TournamentPage from "@/components/tournament";
 
 export default function Tournament() {
-  return <TeamPage />;
+  return <TournamentPage />;
 }

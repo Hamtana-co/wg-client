@@ -9,7 +9,6 @@ export default function TeamCard({ team_name, slug, about_team }: any) {
       <div className="p-3 h-[220px] overflow-hidden">
         <Link href={`/team/${slug}`}></Link>
       </div>
-
       <div className="flex-grow px-5 py-3">
         <h4 className=" font-light text-lg line-clamp-2 mb-3">
           <Link href={`/team/${slug}`} className="line-clamp-1">
