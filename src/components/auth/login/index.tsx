@@ -3,13 +3,11 @@
 import { Icon } from "@iconify/react";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import Image from "next/image";
-import Link from "next/link";
 import { FormEvent, useCallback, useState } from "react";
 import { POST_LOGIN } from "./apis";
-import { RoleEnum } from "@/types/enums/role";
-import { useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
+
 
 export default function LoginPage() {
   const router = useRouter();
@@ -19,12 +17,7 @@ export default function LoginPage() {
     mutationKey: ["POST_LOGIN"],
     mutationFn: POST_LOGIN,
     onSuccess: ({ data }) => {
-      console.log("dsds", data);
-      if ([RoleEnum.FOUNDER].includes(data.user.role)) {
-        router.replace("/");
-      } else {
-        setError("Invalid Credentials");
-      }
+      router.replace("/");
     },
     onError: ({ response }: AxiosError) => {
       let message = "Server Error";
